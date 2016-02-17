@@ -5,13 +5,14 @@ mongo:
   ports: 
     - "27017:27017"
   volumes_from: 
-    -  mongodb
+    -  mongodata
  
-mongodb:
-  image: mongodb
-  container_name: mongodb
+mongodata:
+  image: mongo
+  container_name: mongodata
   volumes:
    - /home/hushuming/dbdata/mongodb:/data/db
+  command: --break-mongo
 
     
 useraccount:

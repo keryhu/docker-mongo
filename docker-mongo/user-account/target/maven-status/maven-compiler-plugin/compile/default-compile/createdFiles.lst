@@ -1,0 +1,4 @@
+com/wfij/kery/account/domain/Role.class
+com/wfij/kery/account/AccountApplication.class
+com/wfij/kery/account/domain/User.class
+com/wfij/kery/account/repository/UserRepository.class
