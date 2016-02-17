@@ -1,0 +1,29 @@
+mongo:
+  image: mongo
+  container_name: mongo
+  restart: always
+  ports: 
+    - "27017:27017"
+  volumes_from: 
+    -  mongodb
+ 
+mongodb:
+  image: mongodb
+  container_name: mongodb
+  volumes:
+   - /home/hushuming/dbdata/mongodb:/data/db
+
+    
+useraccount:
+  image: user-account:0.0.1-SNAPSHOT
+  container_name: useraccount
+  hostname: useraccount
+  restart: always
+  links:  
+    - mongo
+  ports:
+    - "8001:8001"
+
+    
+
+  

@@ -1,0 +1,21 @@
+server:
+  port: 8001
+
+  
+#mongo 
+spring:
+  data:
+    mongodb:
+      uri: mongodb://test:123456@${MONGODB_HOST:localhost}:${MONGODB_PORT:27017}/test
+      repositories:
+        enabled: true
+    
+#date formate
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+      
+ 
+
+
+        
