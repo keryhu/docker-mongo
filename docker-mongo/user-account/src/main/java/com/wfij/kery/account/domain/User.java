@@ -9,12 +9,11 @@ import java.util.UUID;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.rest.core.annotation.RestResource;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.wfij.kery.account.domain.Role;
 
-@Document(collection="docker-user")
+
 public class User implements Serializable{
 
 	private static final long serialVersionUID = -8881254891826611809L;

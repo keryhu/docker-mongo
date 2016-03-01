@@ -7,6 +7,10 @@
   <name>docker-mongo</name>
   <description>test docker mongo spring cloud</description>
   
+  <modules>
+      <module>user-account</module>
+  </modules>
+  
   <parent>
 		<groupId>org.springframework.cloud</groupId>
 		<artifactId>spring-cloud-starter-parent</artifactId>
@@ -105,7 +109,5 @@
 		</pluginRepository>
 	</pluginRepositories>
     
-	<modules>
-		<module>user-account</module>
-	</modules>
+	
 </project>
