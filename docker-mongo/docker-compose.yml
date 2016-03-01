@@ -7,33 +7,33 @@ services:
     restart: always
     ports:
       - "27017:27017"
-    volumes_from:
-      -  mongodata
-    networks:
-      - wfij
-
-  mongodata:
-    image: mongo
     volumes:
-   # 产品发布时，需要更改地址
-       - /home/keryhu/dbdata/mongodb:/data/db
-    command: --break-mongo
-
+      -  mongo-data:/data/db:rw
+    networks:
+      - wfij-net
 
 
   useraccount:
     image: user-account:0.0.1-SNAPSHOT
     container_name: useraccount
     restart: always
+    environment:
+      DOMAIN_NAME: 192.168.1.110
     ports:
       - "8001:8001"
     networks:
-      - wfij
+      - wfij-net
+
 
 
 networks:
   wfij:
-    driver: bridge
+    external:
+      name: wfij-net
+
+volumes:
+  mongo-data:
+    external: true
 
 
 
