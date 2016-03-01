@@ -14,16 +14,16 @@ services:
 
   mongodata:
     image: mongo
-    container_name: mongodata
     volumes:
-      - /home/hushuming/dbdata/mongodb:/data/db
+   # 产品发布时，需要更改地址
+       - /home/keryhu/dbdata/mongodb:/data/db
     command: --break-mongo
 
-    
+
+
   useraccount:
     image: user-account:0.0.1-SNAPSHOT
     container_name: useraccount
-    hostname: useraccount
     restart: always
     ports:
       - "8001:8001"
@@ -34,10 +34,6 @@ services:
 networks:
   wfij:
     driver: bridge
-
-#volumes:
-# mongo-data:
-#   driver:
 
 
 
