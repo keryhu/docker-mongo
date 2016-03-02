@@ -4,7 +4,6 @@ services:
   mongo:
     image: mongo
     container_name: mongo
-    hostname: mongo
     restart: always
     ports:
       - "27017:27017"
@@ -17,7 +16,6 @@ services:
   useraccount:
     image: user-account:0.0.1-SNAPSHOT
     container_name: useraccount
-    hostname: useraccount
     restart: always
 # 通过环境变量，让useraccount访问mongo
     environment:
@@ -26,6 +24,8 @@ services:
       - "8001:8001"
     networks:
       - wfij
+    depends_on:
+      - mongo
 
 
 
