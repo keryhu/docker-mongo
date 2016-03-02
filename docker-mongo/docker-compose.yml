@@ -19,8 +19,9 @@ services:
     container_name: useraccount
     hostname: useraccount
     restart: always
+# 通过环境变量，让useraccount访问mongo
     environment:
-      DOMAIN_NAME: 192.168.1.110
+      MONGO_HOST: mongo
     ports:
       - "8001:8001"
     networks:
