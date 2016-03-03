@@ -7,10 +7,16 @@ services:
     restart: always
     ports:
       - "27017:27017"
-    volumes:
-      -  mongo-data:/data/db:rw
+    volumes_from:
+      -  mongodata
     networks:
       - wfij
+
+  mongodata:
+    image: mongo
+    volumes:
+      - /home/keryhu/dbdata/mongodb:/data/db
+    command: --break-mongo
 
 
   useraccount:
@@ -34,9 +40,6 @@ networks:
     external:
       name: wfij-net
 
-volumes:
-  mongo-data:
-    external: true
 
 
 
