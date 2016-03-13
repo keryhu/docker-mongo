@@ -13,10 +13,12 @@ services:
       - wfij
 
   mongodata:
-    image: mongo
+    image: busybox
     volumes:
       - /home/keryhu/dbdata/mongodb:/data/db
-    command: --break-mongo
+    networks:
+      - wfij
+
 
 
   useraccount:
